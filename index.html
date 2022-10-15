@@ -11,16 +11,21 @@
     <title>Tic Tac Toe</title>
   </head>
   <body>
-    <h1>Tic Tac Toe</h1>
-    <input type="text" name="size" id="sizeInput" placeholder="Enter Game Board Size">
-    <aside><div class="currentPlayerText">Player <div class="player-name"></div></div></aside>
-    <div class="gridContainer"></div>
+    <main class="main">
+      <h1>Tic Tac Toe</h1>
+      <input type="text" name="size" id="sizeInput" placeholder="Enter Game Board Size">
+      <div class="gridContainer"></div>
+      <button class="resetmain">Reset</button>
+    </main>
     <div class="page-cover hidden">
-      <div id="gamestatus-message">
-        <div class="user-message">Player X Won
+      <div id="message">
+        <div id="gamestatus-message">
+          <div class="player-message">Board Reseted</div>
           <button class="reset">Reset</button>
         </div>
+      </div>
     </div>
-    </div>
+    <aside class="aside"><div class="currentPlayerText">Player
+      <span class="player-name"></span>'s Turn</div></aside>
   </body>
 </html>
