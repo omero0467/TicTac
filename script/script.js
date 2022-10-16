@@ -8,19 +8,22 @@
 // !#!#!#!   game will end in a tie when counter = size*size
 //------------------------------------------------------------------------
 const page = document.querySelector(".page-cover");
+const Board3 = document.getElementById('board3');
+const Board4 = document.getElementById('board4');
+const Board5 = document.getElementById('board5');
 const resetbtn = document.querySelector(".reset");
 const resetmainbtn = document.querySelector(".resetmain");
 const message = document.querySelector("#gamestatus-message");
 const playername = document.querySelector(".player-name");
 const user = document.querySelector(".player-message");
 const grid = document.querySelector(".gridContainer");
-const sizeInput = document.querySelector('input')
+// const sizeInput = document.querySelector('input')
 let size = 3;
-sizeInput.addEventListener('input', (e)=>{
-  return Number(e.target.value)
-})
 let counter = 0;
 let gameBoard = setBoard(size);
+Board3.addEventListener('click', (e)=>{
+  size = 5
+})
 // !#!#!#! when setboard called again game board reset but doesnt update display
 // setting the CSS Grid board dimension by the "size" parameter
 grid.setAttribute(
@@ -44,7 +47,7 @@ grid.setAttribute(
   }
   const gridItem = document.querySelectorAll('.grid-item')
   resetbtn.addEventListener('click', reset)
-  resetmainbtn.addEventListener('click', reset)
+  resetmainbtn.addEventListener('click', resetmain)
   //------------------------------------------------------------------------
 //=============================TESTS======================================
 //------------------------------------------------------------------------
@@ -111,6 +114,16 @@ function reset() {
   gameBoard=setBoard(size)
   counter = 0
   page.classList.toggle('hidden')
+}
+function resetmain() {
+  for(let i=0;i<gridItem.length; i++){
+      gridItem[i].innerText = ''
+  }
+  resetbtn.innerText = 'OK'
+  gameBoard=setBoard(size)
+  counter = 0
+  page.classList.toggle('hidden')
+  user.textContent = `Board Reseted`
 }
 function setBoard(size) {
   let board = [];
