@@ -79,10 +79,9 @@ body {
 }
 
 .gridContainer {
-  height: clamp(250px, 60vh, 700px);
-  width: clamp(250px, 60vh, 700px);
+  height: 60vh;
+  width: 60vh;
   display: grid;
-  grid-template: repeat(3, 1fr)/repeat(3, 1fr);
   grid-auto-flow: row; /* or 'row', 'row dense', 'column dense' */
   text-align: center;
 }
@@ -91,7 +90,7 @@ body {
   border: 4px solid pink;
   background-color: #a47ffa;
   color: white;
-  font-size: 120px;
+  font-size: clamp(80px, 150%, 120px);
   font-family: "Bungee Shade";
 }
 

@@ -19,17 +19,21 @@ const user = document.querySelector(".player-message");
 const grid = document.querySelector(".gridContainer");
 // const sizeInput = document.querySelector('input')
 let size = 3;
-let counter = 0;
-let gameBoard = setBoard(size);
-Board3.addEventListener('click', (e)=>{
-  size = 5
-})
-// !#!#!#! when setboard called again game board reset but doesnt update display
-// setting the CSS Grid board dimension by the "size" parameter
 grid.setAttribute(
   "style",
   `grid-template: repeat(${size}, 1fr) / repeat(${size}, 1fr);`
   );
+// Board3.addEventListener('click', (e)=>{
+//   size = 5
+//   grid.setAttribute(
+//     "style",
+//     `grid-template: repeat(${size}, 1fr) / repeat(${size}, 1fr);`
+//     );
+// })
+let counter = 0;
+let gameBoard = setBoard(size);
+// !#!#!#! when setboard called again game board reset but doesnt update display
+// setting the CSS Grid board dimension by the "size" parameter
   //creating every grid item - assigning text content of "", assigning class of "grid-item",
   //creating a unique ID, and a unique event listener to EACH of elements
   for (let i = 0; i < size ** 2; i++) {
